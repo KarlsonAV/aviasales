@@ -7,5 +7,5 @@ router.register('', views.FlightsViewSet, basename='flights')
 
 
 urlpatterns = [
-    path('', views.FlightsViewSet.as_view(), name='flights'),
+    path('', include(router.urls)),
 ]

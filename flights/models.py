@@ -14,9 +14,14 @@ class Flight(models.Model):
     origin = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="departures")
     destination = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="arrivals")
     duration = models.IntegerField()
+    ticket_price = models.IntegerField(default=20, blank=True)
 
     def __str__(self):
         return f"{self.id}: {self.origin} to {self.destination}"
+
+    @property
+    def amount_of_passengers(self):
+        return self.passengers.all().count()
 
 
 class Passenger(models.Model):

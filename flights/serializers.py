@@ -21,5 +21,6 @@ class FlightSerializer(ModelSerializer):
             'origin',
             'destination',
             'duration',
-            'passengers',
+            'ticket_price',
+            'amount_of_passengers',
         ]

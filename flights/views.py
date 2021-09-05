@@ -4,11 +4,6 @@ from .models import Flight
 from .serializers import FlightSerializer
 
 
-class FlightsViewSet(generics.GenericAPIView, mixins.ListModelMixin):
+class FlightsViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Flight.objects.all()
     serializer_class = FlightSerializer
-
-    def get(self, request):
-        return self.list(request)
-
-
