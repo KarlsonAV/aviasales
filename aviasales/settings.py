@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # 3rd apps
     'rest_framework',
     'corsheaders',
+    'django_filters',
 
     # Local apps
     'users.apps.UsersConfig',
@@ -142,3 +143,8 @@ AUTH_USER_MODEL = 'users.User'
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}

@@ -9,6 +9,7 @@ psycopg2-binary = "==2.8.4"
 djangorestframework = "*"
 pyjwt = "==1.7.1"
 django-cors-headers = "*"
+django-filter = "*"
 
 [dev-packages]
 
